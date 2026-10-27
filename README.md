@@ -1,6 +1,7 @@
 <p align="center">
   <img src="docs/demo-01.jpg" width="620" alt="她一边嘴硬，一边甩张梗图过来">
 </p>
+<p align="center"><sub>她一边嘴硬，一边甩张梗图过来</sub></p>
 
 # 鲸言鲸语 · JingYan JingYu
 
