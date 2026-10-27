@@ -1,4 +1,3 @@
-<p align="center"><img width="620" alt="她一边嘴硬，一边甩张梗图过来" src="https://github.com/user-attachments/assets/4919f3e5-5ebe-4c0f-a934-3ae4269ac34c"></p>
 
 # 鲸言鲸语 · JingYan JingYu
 
@@ -7,6 +6,10 @@
 基于 [NapCat](https://github.com/NapNeko/NapCatQQ) + OneBot v11，跑在你自己的服务器上，数据全在本地。
 
 > 本项目是开源二次开发，仅供技术学习交流。请使用 QQ 小号运行，因腾讯风控导致的封号概不负责。
+
+<p align="center">
+  <img src="docs/demo-01.jpg" width="620" alt="她一边嘴硬，一边甩张梗图过来">
+</p>
 
 ## 她记得你
 
