@@ -1,0 +1,49 @@
+{
+  "// 1": "基础版（免费）的功能预设，直接用：cp presets/free/features.json features.json",
+  "// 2": "主动找你有，但靠 presets/free/config.patch.json 降频；画像、日记、语音、听歌、手机不给",
+  "// 3": "本档位的功能清单固定如此；plans.pro 也照此填写，改套餐名不会多出功能——想用别的功能请换对应安装包。",
+  "enabled": true,
+  "file": "features.json",
+  "defaults": {
+    "memory": true,
+    "stickers": true,
+    "gallery": true,
+    "diary": false,
+    "voice": false,
+    "proactive": true,
+    "listen": false,
+    "phone": false,
+    "profile": false,
+    "mood": true,
+    "life": true
+  },
+  "plans": {
+    "free": {
+      "memory": true,
+      "stickers": true,
+      "gallery": true,
+      "diary": false,
+      "voice": false,
+      "proactive": true,
+      "listen": false,
+      "phone": false,
+      "profile": false,
+      "mood": true,
+      "life": true
+    },
+    "pro": {
+      "memory": true,
+      "stickers": true,
+      "gallery": true,
+      "diary": false,
+      "voice": false,
+      "proactive": true,
+      "listen": false,
+      "phone": false,
+      "profile": false,
+      "mood": true,
+      "life": true
+    }
+  },
+  "users": {}
+}

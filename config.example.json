@@ -1,0 +1,177 @@
+{
+  "// 1": "=== 模型（必填 apiKey；baseUrl/model 换别家也认 OpenAI 兼容接口）===",
+  "apiKey": "sk-在这里填你的密钥",
+  "baseUrl": "https://api.deepseek.com/v1",
+  "model": "deepseek-chat",
+
+  "// 2": "=== 角色卡（相对项目根目录的路径，默认 ./role.md）===",
+  "roleCard": "role.md",
+  "roleMaxChars": 12000,
+  "// 2b": "角色卡里的 {{OWNER}} 会换成这个名字；留空就是「主人」",
+  "ownerName": "这里填你的名字",
+
+  "// 3": "=== 她是谁 ===",
+  "names": ["小鱼", "小助手"],
+  "keywords": ["小鱼", "在吗"],
+  "// 3b": "谁能叫醒她。第一个是主管理员，最多 3 个；必须是字符串，别写数字",
+  "ownerIds": ["100000001"],
+
+  "// 4": "=== OneBot（NapCat / Lagrange / SnowLuma 都行，必须是 OneBot v11）===",
+  "onebot": {
+    "wsUrl": "ws://127.0.0.1:3001",
+    "httpUrl": "http://127.0.0.1:3000",
+    "accessToken": "这里填 NapCat 里的 token",
+    "// c": "识图用：NapCat 容器里 QQ 目录在宿主机上的真实路径。跑 node tools/detect-napcat.js --apply 会自动填好",
+    "imageVolume": "",
+    "// d": "识图用：容器里的目录前缀，一般不用改",
+    "imagePrefix": "/app/.config/QQ"
+  },
+
+  "// 5": "=== 什么时候说话 ===",
+  "wake": {
+    "// a": "true = 群里只有被 @ 或管理员说话才理；false = 还看名字/提问/概率",
+    "groupAtOnly": true,
+    "// b": "0.05 = 群里普通消息有 5% 概率插一句（0 = 只被动回复）",
+    "probability": 0.05,
+    "privateWindowMs": 2500,
+    "groupWindowMs": 6000
+  },
+
+  "// 5b": "=== 场合权限（按群配；没配的群走上面 wake 的默认值）===",
+  "// 5c": "键必须是纯数字群号字符串；admins 只在这个群有效，主人始终有效",
+  "groups": {},
+
+  "// 6": "=== 怎么说话（拟人化）===",
+  "humanize": {
+    "enabled": true,
+    "msPerChar": 85,
+    "minMs": 1200,
+    "maxMs": 6000,
+    "jitter": 0.2,
+    "// a": "一条回复最多拆成几个气泡，1 = 不分条",
+    "burstMax": 4,
+    "gapRange": [700, 2600],
+    "longGapChance": 0.25,
+    "longGapRange": [3000, 9000]
+  },
+
+  "// 7": "=== 数据存哪（账本 + 对话流 + 各功能状态文件）===",
+  "dataDir": "data",
+
+  "// 8": "=== 表情包（贴纸）===",
+  "stickers": {
+    "// a": "每个会话每小时最多几张",
+    "perHour": 3,
+    "// b": "群里每小时最多几张（比私聊紧）",
+    "groupPerHour": 2,
+    "// c": "最近发过的 N 张先不重复发",
+    "avoid": 3,
+    "// d": "深夜不发图，跨夜写成 [2, 7] = 2 点到 7 点",
+    "quiet": [2, 7]
+  },
+
+  "// 9": "=== 图库（她自己攒的图，每张一句理由）===",
+  "gallery": {
+    "// a": "每天最多收藏几张",
+    "collectPerDay": 3,
+    "// b": "私聊每小时 / 每天最多发几张",
+    "perHour": 3,
+    "perDay": 8,
+    "// c": "单张最大多少 MB（base64 会膨胀 33%）",
+    "maxMB": 4
+  },
+
+  "// 10": "=== 日记（她自己写）===",
+  "diaryDir": "data/diary",
+  "diaryMaxChars": 2000,
+  "diary": {
+    "enabled": true,
+    "// a": "每天在这个窗口里随机挑一个时刻写，别固定整点",
+    "windowStartHour": 21,
+    "// b": "26 = 次日 2 点；必须大于 windowStartHour",
+    "windowEndHour": 26,
+    "maxRetryPerDay": 3,
+    "retryMinutes": 30
+  },
+
+  "// 11": "=== 主动找你（只在私聊找主人，从不在群里主动）===",
+  "proactive": {
+    "enabled": true,
+    "// a": "每隔 45~110 分钟随机看一次（写固定间隔会像闹钟）",
+    "checkMinMinutes": 45,
+    "checkMaxMinutes": 110,
+    "// b": "他安静了这么久才考虑开口",
+    "quietMinutes": 15,
+    "// c": "每天最多几条（防风控、防烦人）",
+    "dailyMax": 6,
+    "// d": "真到点了也只有这个概率真发",
+    "probability": 0.35,
+    "// e": "深夜 23~8 点概率是否减半",
+    "nightDiscount": false,
+    "ownerOnly": true,
+    "// f": "主动那一条里发语音的概率（0 = 不发）",
+    "voiceChance": 0.3
+  },
+
+  "// 12": "=== 听歌（分享卡片 + Last.fm 实时监测）===",
+  "listening": {
+    "enabled": true,
+    "ttlHours": 24,
+    "debounceMin": 10
+  },
+  "lastfm": {
+    "enabled": false,
+    "// a": "填了 user + apiKey 才能实时知道他在听什么；不填就只靠分享卡片",
+    "user": "",
+    "apiKey": "",
+    "pollMin": 2,
+    "idleMin": 12
+  },
+
+  "// 13": "=== 语音（edge-tts，需要 python3-venv + /opt/tts）===",
+  "voice": {
+    "enabled": true,
+    "ttsBin": "/opt/tts/bin/edge-tts",
+    "// a": "换音色：/opt/tts/bin/edge-tts --list-voices | grep zh-CN",
+    "voice": "zh-CN-XiaoyiNeural",
+    "rate": "+8%",
+    "pitch": "+12Hz",
+    "maxChars": 60,
+    "perHour": 3,
+    "perDay": 10,
+    "// b": "群里另算一套更紧的额度",
+    "groupPerHour": 1,
+    "groupPerDay": 3,
+    "groupMaxChars": 15,
+    "quiet": [2, 7]
+  },
+
+  "// 14": "=== 状态 / 生活感 / 月度画像 ===",
+  "mood": { "enabled": true },
+  "life": { "enabled": true },
+  "profile": {
+    "enabled": true,
+    "// a": "注入最近几个月",
+    "showMonths": 2,
+    "// b": "数据太少的月份跳过",
+    "minDays": 5,
+    "minFacts": 6
+  },
+
+  "// 15": "=== 手机（可选：云端开隧道，手机上的 phone-agent 连进来）===",
+  "phone": {
+    "enabled": false,
+    "// a": "云端监听端口，要在安全组 / 防火墙里放开",
+    "port": 3010,
+    "// b": "手机连进来的口令，换成你自己的随机串",
+    "token": "换成一串随机字符",
+    "actionsPerHour": 20,
+    "// c": "调完音量后多少毫秒恢复成 quietVolume（0 = 静音）",
+    "restoreMs": 20000,
+    "quietVolume": 0
+  },
+
+  "// 16": "=== 调试 ===",
+  "// 16a": "true = 不真发消息，只打印她会说什么",
+  "dryRun": false
+}

@@ -1,0 +1,25 @@
+{
+  "// 1": "基础版要合进 config.json 的字段，用 node tools/apply-preset.js free 自动合，别手抄",
+  "// 2": "思路：功能给全，但额度和频率收紧——够用，但比不上进阶",
+  "proactive": {
+    "// a": "更慢的节奏、更低的概率、更少的一天条数",
+    "enabled": true,
+    "checkMinMinutes": 90,
+    "checkMaxMinutes": 180,
+    "quietMinutes": 20,
+    "dailyMax": 2,
+    "probability": 0.25,
+    "nightDiscount": true,
+    "ownerOnly": true,
+    "voiceChance": 0
+  },
+  "stickers": {
+    "perHour": 2,
+    "groupPerHour": 1
+  },
+  "gallery": {
+    "collectPerDay": 2,
+    "perHour": 1,
+    "perDay": 3
+  }
+}

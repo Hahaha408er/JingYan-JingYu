@@ -1,0 +1,18 @@
+node_modules/
+config.json
+config-*.json
+features-*.json
+bot.log
+data/*.jsonl
+data/diary/
+data/days/
+data/gallery/*.jpg
+data/gallery/*.png
+-20*-*-*
+dist/
+
+# 卖家自分の东西，绝不进仓库
+keys/
+data/license.txt
+LICENSE-ME.txt
+licenses.csv
