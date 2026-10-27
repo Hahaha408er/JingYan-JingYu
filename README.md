@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="docs/demo-01.jpg" width="620" alt="她一边嘴硬，一边甩张梗图过来">
+</p>
 
 # 鲸言鲸语 · JingYan JingYu
 
@@ -7,9 +10,6 @@
 
 > 本项目是开源二次开发，仅供技术学习交流。请使用 QQ 小号运行，因腾讯风控导致的封号概不负责。
 
-<p align="center">
-  <img src="docs/demo-01.jpg" width="620" alt="她一边嘴硬，一边甩张梗图过来">
-</p>
 
 ## 她记得你
 
